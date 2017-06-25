@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+
+{% block container %}
+
+      <ul class='list-unstyled'>
+        {% for time,todo in todos.items() %}
+        <li class='well well-sm'>
+
+          {{time}}: {{todo}}
+
+        </li>
+        {% endfor %}
+      </ul>
+{% endblock %}

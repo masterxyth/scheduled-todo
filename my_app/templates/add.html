@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block container %}
+
+<h3>What do you want to do Today?</h3>
+<form action='/submit' method='POST'>
+<ul class='list-unstyled'>
+  {% for time,todo in todos.items() %}
+  <li class='well well-sm'>
+    <div class="form-group">
+      <label for="{{ time }}">{{time}}</label>
+      <input type="text" class="form-control" name="{{time}}">
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+<button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+{% endblock %}
