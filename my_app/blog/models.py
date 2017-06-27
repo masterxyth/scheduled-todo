@@ -48,3 +48,6 @@ class DBHelper():
 
     def create_user(self, email, salt, hashed):
         self.db.users.insert({"email": email, "salt": salt, "hashed": hashed})
+
+    def get_user(self, email):
+        return self.db.users.find_one({"email": email})
